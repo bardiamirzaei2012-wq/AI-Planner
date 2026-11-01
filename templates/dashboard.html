@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Dashboard | Smart AI Study Planner
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+<body>
+
+<div class="background-orb orb-1"></div>
+<div class="background-orb orb-2"></div>
+<div class="background-grid"></div>
+
+
+<header class="navbar">
+
+    <a href="/" class="logo">
+
+        <div class="logo-icon">
+            🤖
+        </div>
+
+        <div>
+            <strong>Smart AI</strong>
+            <span>Study Planner</span>
+        </div>
+
+    </a>
+
+
+    <nav class="nav-links">
+
+        <a href="/">
+            خانه
+        </a>
+
+        <a
+            href="/dashboard"
+            class="active"
+        >
+            داشبورد
+        </a>
+
+        <a href="/profile">
+            پروفایل
+        </a>
+
+        <a href="/subjects">
+            درس‌ها
+        </a>
+
+        <a href="/planner">
+            برنامه‌ریز AI
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main class="dashboard-container">
+
+
+    <!-- DASHBOARD HEADER -->
+
+    <section class="dashboard-header">
+
+        <div>
+
+            <span class="small-label">
+                خوش آمدید 👋
+            </span>
+
+            <h1>
+                سلام،
+                <span id="userName">
+                    دانش‌آموز
+                </span>
+            </h1>
+
+            <p>
+                امروز را با یک برنامه خوب شروع کنیم.
+            </p>
+
+        </div>
+
+
+        <a
+            href="/planner"
+            class="btn btn-primary"
+        >
+            🤖 برنامه‌ریزی با AI
+        </a>
+
+    </section>
+
+
+    <!-- STAT CARDS -->
+
+    <section class="stats-grid">
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                📚
+            </div>
+
+            <div>
+
+                <span>
+                    زمان برنامه‌ریزی شده
+                </span>
+
+                <strong id="plannedMinutes">
+                    0 دقیقه
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                ✅
+            </div>
+
+            <div>
+
+                <span>
+                    مطالعه انجام‌شده
+                </span>
+
+                <strong id="completedMinutes">
+                    0 دقیقه
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                ⏳
+            </div>
+
+            <div>
+
+                <span>
+                    باقی‌مانده
+                </span>
+
+                <strong id="remainingMinutes">
+                    0 دقیقه
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                📈
+            </div>
+
+            <div>
+
+                <span>
+                    پیشرفت کلی
+                </span>
+
+                <strong id="overallProgress">
+                    0%
+                </strong>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- MAIN DASHBOARD -->
+
+    <section class="dashboard-grid">
+
+
+        <!-- TODAY -->
+
+        <div class="content-card">
+
+            <div class="content-card-header">
+
+                <div>
+
+                    <span class="small-label">
+                        برنامه امروز
+                    </span>
+
+                    <h2>
+                        جلسات مطالعه
+                    </h2>
+
+                </div>
+
+                <span class="date-badge">
+                    امروز
+                </span>
+
+            </div>
+
+
+            <div
+                id="todaySessions"
+                class="today-sessions"
+            >
+
+                <div class="empty-state">
+
+                    <div class="empty-icon">
+                        📅
+                    </div>
+
+                    <p>
+                        هنوز برنامه‌ای برای امروز وجود ندارد.
+                    </p>
+
+                    <a
+                        href="/planner"
+                        class="btn btn-primary"
+                    >
+                        ساخت برنامه
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- OVERALL PROGRESS -->
+
+        <div class="content-card">
+
+            <div class="content-card-header">
+
+                <div>
+
+                    <span class="small-label">
+                        عملکرد
+                    </span>
+
+                    <h2>
+                        پیشرفت کلی
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="big-progress">
+
+                <div class="circle-progress">
+
+                    <div>
+
+                        <strong id="circleProgress">
+                            0%
+                        </strong>
+
+                        <span>
+                            تکمیل
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="progress-info">
+
+                <div>
+
+                    <span>
+                        زمان مطالعه
+                    </span>
+
+                    <strong id="dashboardCompleted">
+                        0 دقیقه
+                    </strong>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        باقی‌مانده
+                    </span>
+
+                    <strong id="dashboardRemaining">
+                        0 دقیقه
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- SUBJECT PROGRESS -->
+
+    <section class="content-card">
+
+        <div class="content-card-header">
+
+            <div>
+
+                <span class="small-label">
+                    درس‌ها
+                </span>
+
+                <h2>
+                    پیشرفت دروس
+                </h2>
+
+            </div>
+
+            <a
+                href="/subjects"
+                class="text-link"
+            >
+                مدیریت درس‌ها ←
+            </a>
+
+        </div>
+
+
+        <div
+            id="dashboardSubjects"
+            class="dashboard-subjects"
+        >
+
+            <div class="empty-state">
+
+                <div class="empty-icon">
+                    📚
+                </div>
+
+                <p>
+                    هنوز درسی ثبت نشده است.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- QUICK ACTIONS -->
+
+    <section class="quick-actions">
+
+
+        <a
+            href="/profile"
+            class="quick-action"
+        >
+
+            <span>
+                👤
+            </span>
+
+            <div>
+
+                <strong>
+                    پروفایل
+                </strong>
+
+                <small>
+                    اطلاعات کاربر
+                </small>
+
+            </div>
+
+        </a>
+
+
+        <a
+            href="/subjects"
+            class="quick-action"
+        >
+
+            <span>
+                📚
+            </span>
+
+            <div>
+
+                <strong>
+                    درس‌ها
+                </strong>
+
+                <small>
+                    مدیریت دروس
+                </small>
+
+            </div>
+
+        </a>
+
+
+        <a
+            href="/planner"
+            class="quick-action"
+        >
+
+            <span>
+                🤖
+            </span>
+
+            <div>
+
+                <strong>
+                    AI Planner
+                </strong>
+
+                <small>
+                    ساخت برنامه
+                </small>
+
+            </div>
+
+        </a>
+
+
+    </section>
+
+
+</main>
+
+
+<footer class="footer">
+
+    <strong>
+        🤖 Smart AI Study Planner
+    </strong>
+
+    <span>
+        © 2026
+    </span>
+
+</footer>
+
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+        const observer =
+            new MutationObserver(
+                () => {
+
+                    const progressElement =
+                        document.querySelector(
+                            "#overallProgress"
+                        );
+
+                    const circle =
+                        document.querySelector(
+                            "#circleProgress"
+                        );
+
+                    if (
+                        progressElement &&
+                        circle
+                    ) {
+
+                        circle.textContent =
+                            progressElement.textContent;
+
+                    }
+
+                }
+            );
+
+        const target =
+            document.querySelector(
+                "#overallProgress"
+            );
+
+        if (target) {
+
+            observer.observe(
+                target,
+                {
+                    childList: true,
+                    characterData: true,
+                    subtree: true
+                }
+            );
+
+        }
+
+    }
+);
+
+</script>
+
+
+<script
+    src="{{ url_for('static', filename='js/script.js') }}"
+></script>
+
+</body>
+
+</html>

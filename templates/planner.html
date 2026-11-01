@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        AI Planner | Smart AI Study Planner
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+<body>
+
+<div class="background-orb orb-1"></div>
+<div class="background-orb orb-2"></div>
+<div class="background-grid"></div>
+
+
+<header class="navbar">
+
+    <a href="/" class="logo">
+
+        <div class="logo-icon">
+            🤖
+        </div>
+
+        <div>
+            <strong>Smart AI</strong>
+            <span>Study Planner</span>
+        </div>
+
+    </a>
+
+
+    <nav class="nav-links">
+
+        <a href="/">
+            خانه
+        </a>
+
+        <a href="/dashboard">
+            داشبورد
+        </a>
+
+        <a href="/profile">
+            پروفایل
+        </a>
+
+        <a href="/subjects">
+            درس‌ها
+        </a>
+
+        <a
+            href="/planner"
+            class="active"
+        >
+            برنامه‌ریز AI
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main class="page-container">
+
+
+    <section class="page-header">
+
+        <div class="badge">
+            🤖 AI Study Planner
+        </div>
+
+        <h1>
+            برنامه مطالعه
+            <span>هوشمند</span>
+        </h1>
+
+        <p>
+            اطلاعات شما توسط AI تحلیل شده و
+            یک برنامه هفتگی شخصی‌سازی‌شده ساخته می‌شود.
+        </p>
+
+    </section>
+
+
+    <!-- AI CONTROL -->
+
+    <section class="ai-control-card">
+
+        <div class="ai-control-content">
+
+            <div class="ai-big-icon">
+                🤖
+            </div>
+
+            <div>
+
+                <h2>
+                    آماده ساخت برنامه هستی؟
+                </h2>
+
+                <p>
+                    AI درس‌ها، اهمیت، زمان مطالعه روزانه،
+                    هدف و عملکردت را بررسی می‌کند.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="ai-actions">
+
+            <button
+                id="generatePlan"
+                class="btn btn-primary"
+                type="button"
+            >
+                ✨ ساخت برنامه با AI
+            </button>
+
+            <button
+                id="optimizePlan"
+                class="btn btn-secondary"
+                type="button"
+            >
+                ⚡ بهینه‌سازی
+            </button>
+
+            <button
+                id="rebalancePlan"
+                class="btn btn-secondary"
+                type="button"
+            >
+                🔄 تنظیم مجدد
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- PLAN -->
+
+    <section class="content-card planner-result">
+
+        <div class="content-card-header">
+
+            <div>
+
+                <span class="small-label">
+                    خروجی هوش مصنوعی
+                </span>
+
+                <h2>
+                    برنامه هفتگی
+                </h2>
+
+            </div>
+
+            <div class="ai-status">
+
+                <span class="pulse-dot"></span>
+
+                AI Ready
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="planContainer"
+            class="study-plan"
+        >
+
+            <div class="empty-state planner-empty">
+
+                <div class="empty-icon">
+                    🤖
+                </div>
+
+                <h3>
+                    هنوز برنامه‌ای ساخته نشده
+                </h3>
+
+                <p>
+                    روی «ساخت برنامه با AI» کلیک کن.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- AI LOGIC -->
+
+    <section class="feature-grid planner-features">
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                🎯
+            </div>
+
+            <h3>
+                اولویت‌بندی
+            </h3>
+
+            <p>
+                درس‌های مهم‌تر زمان بیشتری دریافت می‌کنند.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                🧠
+            </div>
+
+            <h3>
+                تحلیل عملکرد
+            </h3>
+
+            <p>
+                عملکرد قبلی برای برنامه آینده تحلیل می‌شود.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                ☕
+            </div>
+
+            <h3>
+                استراحت هوشمند
+            </h3>
+
+            <p>
+                بین جلسات مطالعه زمان استراحت قرار می‌گیرد.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                🔄
+            </div>
+
+            <h3>
+                Rebalance
+            </h3>
+
+            <p>
+                اگر از برنامه عقب بمانید، برنامه دوباره تنظیم می‌شود.
+            </p>
+
+        </div>
+
+
+    </section>
+
+</main>
+
+
+<footer class="footer">
+
+    <strong>
+        🤖 Smart AI Study Planner
+    </strong>
+
+    <span>
+        © 2026
+    </span>
+
+</footer>
+
+
+<script
+    src="{{ url_for('static', filename='js/script.js') }}"
+></script>
+
+</body>
+
+</html>

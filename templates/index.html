@@ -1,1 +1,589 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart AI Study Planner</title>
+
+    <meta
+        name="description"
+        content="برنامه‌ریزی هوشمند مطالعه با کمک هوش مصنوعی"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+</head>
+
+<body>
+
+    <!-- Background -->
+    <div class="background-orb orb-1"></div>
+    <div class="background-orb orb-2"></div>
+    <div class="background-grid"></div>
+
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <a href="/" class="logo">
+
+            <div class="logo-icon">
+                🤖
+            </div>
+
+            <div>
+                <strong>Smart AI</strong>
+                <span>Study Planner</span>
+            </div>
+
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="/" class="active">
+                خانه
+            </a>
+
+            <a href="/dashboard">
+                داشبورد
+            </a>
+
+            <a href="/profile">
+                پروفایل
+            </a>
+
+            <a href="/subjects">
+                درس‌ها
+            </a>
+
+            <a href="/planner">
+                برنامه‌ریز AI
+            </a>
+
+        </nav>
+
+
+        <a
+            href="/profile"
+            class="nav-button"
+        >
+            شروع کنید
+        </a>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="badge">
+
+                    <span class="pulse-dot"></span>
+
+                    برنامه‌ریزی هوشمند با AI
+
+                </div>
+
+
+                <h1>
+
+                    هوشمندانه‌تر
+                    <br>
+
+                    <span>درس بخوان.</span>
+
+                </h1>
+
+
+                <p>
+
+                    با کمک هوش مصنوعی، زمان مطالعه خودت را
+                    مدیریت کن، درس‌ها را اولویت‌بندی کن و
+                    هر هفته یک برنامه شخصی‌سازی‌شده داشته باش.
+
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="/profile"
+                        class="btn btn-primary"
+                    >
+                        🚀 ساخت برنامه من
+                    </a>
+
+                    <a
+                        href="/dashboard"
+                        class="btn btn-secondary"
+                    >
+                        مشاهده داشبورد
+                    </a>
+
+                </div>
+
+
+                <div class="hero-stats">
+
+                    <div>
+
+                        <strong>
+                            AI
+                        </strong>
+
+                        <span>
+                            برنامه‌ریزی هوشمند
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            7
+                        </strong>
+
+                        <span>
+                            روز برنامه هفتگی
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            24/7
+                        </strong>
+
+                        <span>
+                            پیگیری پیشرفت
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- HERO CARD -->
+
+            <div class="hero-preview">
+
+                <div class="preview-glow"></div>
+
+                <div class="preview-card">
+
+                    <div class="preview-header">
+
+                        <div>
+
+                            <span>
+                                برنامه امروز
+                            </span>
+
+                            <strong>
+                                شنبه، ۱۰ شهریور
+                            </strong>
+
+                        </div>
+
+                        <div class="ai-icon">
+                            ✨
+                        </div>
+
+                    </div>
+
+
+                    <div class="preview-progress">
+
+                        <div class="progress-header">
+
+                            <span>
+                                پیشرفت امروز
+                            </span>
+
+                            <strong>
+                                72%
+                            </strong>
+
+                        </div>
+
+                        <div class="progress-bar">
+
+                            <div
+                                class="progress-fill"
+                                style="width:72%"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="preview-task">
+
+                        <div class="task-time">
+
+                            <strong>
+                                16:00
+                            </strong>
+
+                            <span>
+                                60 دقیقه
+                            </span>
+
+                        </div>
+
+                        <div class="task-icon">
+                            📐
+                        </div>
+
+                        <div class="task-info">
+
+                            <strong>
+                                ریاضی
+                            </strong>
+
+                            <span>
+                                فصل سوم
+                            </span>
+
+                        </div>
+
+                        <div class="task-check">
+                            ✓
+                        </div>
+
+                    </div>
+
+
+                    <div class="preview-task">
+
+                        <div class="task-time">
+
+                            <strong>
+                                17:15
+                            </strong>
+
+                            <span>
+                                15 دقیقه
+                            </span>
+
+                        </div>
+
+                        <div class="task-icon">
+                            ☕
+                        </div>
+
+                        <div class="task-info">
+
+                            <strong>
+                                استراحت
+                            </strong>
+
+                            <span>
+                                زمان بازیابی
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="preview-task">
+
+                        <div class="task-time">
+
+                            <strong>
+                                17:30
+                            </strong>
+
+                            <span>
+                                45 دقیقه
+                            </span>
+
+                        </div>
+
+                        <div class="task-icon">
+                            🧪
+                        </div>
+
+                        <div class="task-info">
+
+                            <strong>
+                                علوم
+                            </strong>
+
+                            <span>
+                                فصل پنجم
+                            </span>
+
+                        </div>
+
+                        <div class="task-check">
+                            ○
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FEATURES -->
+
+        <section class="section">
+
+            <div class="section-title">
+
+                <div class="badge">
+                    امکانات
+                </div>
+
+                <h2>
+                    همه چیز برای یک
+                    <span>مطالعه بهتر</span>
+                </h2>
+
+                <p>
+                    ابزارهای موردنیاز برای مدیریت کامل مطالعه
+                </p>
+
+            </div>
+
+
+            <div class="feature-grid">
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        🤖
+                    </div>
+
+                    <h3>
+                        AI Study Planner
+                    </h3>
+
+                    <p>
+                        هوش مصنوعی بر اساس درس‌ها،
+                        زمان آزاد و هدف شما برنامه می‌سازد.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        📊
+                    </div>
+
+                    <h3>
+                        پیگیری پیشرفت
+                    </h3>
+
+                    <p>
+                        پیشرفت هر درس را با نمودار و
+                        Progress Bar مشاهده کنید.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        🔄
+                    </div>
+
+                    <h3>
+                        برنامه پویا
+                    </h3>
+
+                    <p>
+                        اگر از برنامه عقب بمانید،
+                        برنامه دوباره تنظیم می‌شود.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        🎯
+                    </div>
+
+                    <h3>
+                        اولویت‌بندی
+                    </h3>
+
+                    <p>
+                        درس‌های مهم‌تر و ضعیف‌تر
+                        زمان بیشتری دریافت می‌کنند.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- HOW IT WORKS -->
+
+        <section class="section">
+
+            <div class="section-title">
+
+                <div class="badge">
+                    چگونه کار می‌کند؟
+                </div>
+
+                <h2>
+                    فقط در
+                    <span>۳ مرحله</span>
+                </h2>
+
+            </div>
+
+
+            <div class="steps">
+
+                <div class="step">
+
+                    <div class="step-number">
+                        01
+                    </div>
+
+                    <h3>
+                        اطلاعاتت را وارد کن
+                    </h3>
+
+                    <p>
+                        سن، مقطع، هدف و زمان مطالعه روزانه
+                    </p>
+
+                </div>
+
+
+                <div class="step">
+
+                    <div class="step-number">
+                        02
+                    </div>
+
+                    <h3>
+                        درس‌ها را اضافه کن
+                    </h3>
+
+                    <p>
+                        اهمیت و زمان موردنیاز هر درس را مشخص کن
+                    </p>
+
+                </div>
+
+
+                <div class="step">
+
+                    <div class="step-number">
+                        03
+                    </div>
+
+                    <h3>
+                        برنامه AI را دریافت کن
+                    </h3>
+
+                    <p>
+                        هوش مصنوعی برنامه هفتگی اختصاصی می‌سازد
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CTA -->
+
+        <section class="cta-section">
+
+            <div>
+
+                <div class="badge">
+                    آماده‌ای؟
+                </div>
+
+                <h2>
+                    برنامه مطالعه
+                    <span>خودت را بساز.</span>
+                </h2>
+
+                <p>
+                    همین الان شروع کن و اولین برنامه هوشمندت
+                    را بساز.
+                </p>
+
+                <a
+                    href="/profile"
+                    class="btn btn-primary"
+                >
+                    🚀 شروع رایگان
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <div>
+
+            <strong>
+                🤖 Smart AI Study Planner
+            </strong>
+
+            <span>
+                برنامه‌ریزی هوشمند برای مطالعه بهتر
+            </span>
+
+        </div>
+
+        <span>
+            © 2026 Smart AI Study Planner
+        </span>
+
+    </footer>
+
+
+    <script
+        src="{{ url_for('static', filename='js/script.js') }}"
+    ></script>
+
+</body>
+
+</html>

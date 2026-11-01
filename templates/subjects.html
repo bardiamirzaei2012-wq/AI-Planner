@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>درس‌ها | Smart AI Study Planner</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+<body>
+
+<div class="background-orb orb-1"></div>
+<div class="background-orb orb-2"></div>
+<div class="background-grid"></div>
+
+
+<header class="navbar">
+
+    <a href="/" class="logo">
+
+        <div class="logo-icon">
+            🤖
+        </div>
+
+        <div>
+            <strong>Smart AI</strong>
+            <span>Study Planner</span>
+        </div>
+
+    </a>
+
+
+    <nav class="nav-links">
+
+        <a href="/">
+            خانه
+        </a>
+
+        <a href="/dashboard">
+            داشبورد
+        </a>
+
+        <a href="/profile">
+            پروفایل
+        </a>
+
+        <a
+            href="/subjects"
+            class="active"
+        >
+            درس‌ها
+        </a>
+
+        <a href="/planner">
+            برنامه‌ریز AI
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main class="page-container">
+
+
+    <section class="page-header">
+
+        <div class="badge">
+            📚 مدیریت درس‌ها
+        </div>
+
+        <h1>
+            درس‌های
+            <span>من</span>
+        </h1>
+
+        <p>
+            درس‌ها را اضافه کن و اهمیت و زمان موردنیاز
+            هر کدام را مشخص کن.
+        </p>
+
+    </section>
+
+
+    <section class="subject-layout">
+
+
+        <!-- ADD SUBJECT -->
+
+        <div class="form-card">
+
+            <div class="form-card-header">
+
+                <div class="form-icon">
+                    ➕
+                </div>
+
+                <div>
+
+                    <h2>
+                        افزودن درس
+                    </h2>
+
+                    <p>
+                        یک درس جدید به برنامه اضافه کنید.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <form id="subjectForm">
+
+                <div class="form-group">
+
+                    <label for="subjectName">
+                        نام درس
+                    </label>
+
+                    <input
+                        type="text"
+                        id="subjectName"
+                        name="name"
+                        placeholder="مثلاً ریاضی"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="importance">
+                        اهمیت درس
+                    </label>
+
+                    <select
+                        id="importance"
+                        name="importance"
+                    >
+
+                        <option value="1">
+                            ⭐ 1 - کم
+                        </option>
+
+                        <option value="2">
+                            ⭐⭐ 2
+                        </option>
+
+                        <option
+                            value="3"
+                            selected
+                        >
+                            ⭐⭐⭐ 3 - متوسط
+                        </option>
+
+                        <option value="4">
+                            ⭐⭐⭐⭐ 4
+                        </option>
+
+                        <option value="5">
+                            ⭐⭐⭐⭐⭐ 5 - خیلی مهم
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="requiredHours">
+                        ساعت مطالعه موردنیاز
+                    </label>
+
+                    <input
+                        type="number"
+                        id="requiredHours"
+                        name="required_hours"
+                        placeholder="مثلاً 5"
+                        min="0.5"
+                        step="0.5"
+                        value="2"
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="btn btn-primary full-button"
+                >
+                    ➕ افزودن درس
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <!-- SUBJECT LIST -->
+
+        <div class="content-card">
+
+            <div class="content-card-header">
+
+                <div>
+
+                    <span class="small-label">
+                        لیست دروس
+                    </span>
+
+                    <h2>
+                        درس‌های شما
+                    </h2>
+
+                </div>
+
+                <div class="count-badge">
+                    <span id="subjectCount">
+                        0
+                    </span>
+                    درس
+                </div>
+
+            </div>
+
+
+            <div
+                id="subjectsList"
+                class="subjects-list"
+            >
+
+                <div class="empty-state">
+
+                    <div class="empty-icon">
+                        📚
+                    </div>
+
+                    <p>
+                        هنوز درسی اضافه نشده است.
+                    </p>
+
+                    <span>
+                        از فرم کنار صفحه اولین درس را اضافه کنید.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- AI TIP -->
+
+    <section class="ai-tip">
+
+        <div class="ai-tip-icon">
+            🤖
+        </div>
+
+        <div>
+
+            <h3>
+                نکته هوشمند
+            </h3>
+
+            <p>
+                اهمیت درس را واقعی تعیین کن.
+                AI بر اساس اهمیت، زمان موردنیاز و
+                عملکردت زمان مطالعه را تقسیم می‌کند.
+            </p>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<footer class="footer">
+
+    <strong>
+        🤖 Smart AI Study Planner
+    </strong>
+
+    <span>
+        © 2026
+    </span>
+
+</footer>
+
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+        const observer =
+            new MutationObserver(
+                () => {
+
+                    const count =
+                        document.querySelectorAll(
+                            ".subject-card"
+                        ).length;
+
+                    const element =
+                        document.querySelector(
+                            "#subjectCount"
+                        );
+
+                    if (element) {
+                        element.textContent =
+                            count;
+                    }
+
+                }
+            );
+
+        const list =
+            document.querySelector(
+                "#subjectsList"
+            );
+
+        if (list) {
+
+            observer.observe(
+                list,
+                {
+                    childList: true,
+                    subtree: true
+                }
+            );
+
+        }
+
+    }
+);
+
+</script>
+
+
+<script
+    src="{{ url_for('static', filename='js/script.js') }}"
+></script>
+
+</body>
+
+</html>
