@@ -732,10 +732,12 @@ AI tools were used as assistants and not as a replacement for understanding the 
 ---
 
 👨‍💻 Developer
+
 Bardia Mirzaei
 
 AI & Software Development Enthusiast
 
 GitHub: @bardiamirzaei2012-dev
+
 Website: bardiamirzaei.com
 
