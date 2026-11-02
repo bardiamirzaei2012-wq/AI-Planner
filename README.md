@@ -731,11 +731,11 @@ AI tools were used as assistants and not as a replacement for understanding the 
 
 ---
 
-# Author
+👨‍💻 Developer
+Bardia Mirzaei
 
-**Bardia Mirzaei**
+AI & Software Development Enthusiast
 
-CS50x Final Project
-
-**Project:** Bardia AI Planner
+GitHub: @bardiamirzaei2012-dev
+Website: bardiamirzaei.com
 
